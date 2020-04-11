@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('todo')
+    ->group(function () {
+
+        Route::get('new', 'TodoController@create');
+        Route::get('delete', 'TodoController@delete');
+        Route::get('list', 'TodoController@all');
+
+    });
