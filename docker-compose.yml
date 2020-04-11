@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./build/todo-back/Dockerfile
+    environment:
+      - DB_CONNECTION=pgsql
+      - DB_HOST=postgre
+      - DB_DATABASE=db_todo
+      - DB_USERNAME=violin
+      - DB_PASSWORD=passwd
+    volumes:
+      - "./app/todo-back:/app"
+    depends_on:
+      - postgre
+
+  postgre:
+    image: postgres:12
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=db_todo
+      - POSTGRES_USER=violin
+      - POSTGRES_PASSWORD=passwd
+    volumes:
+      - "./data/postgres/db:/var/lib/postgresql/data"
