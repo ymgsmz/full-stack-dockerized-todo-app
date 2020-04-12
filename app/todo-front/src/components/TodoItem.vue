@@ -28,7 +28,7 @@ export default {
 
 .horizontal-divider {
   width: 1px;
-  margin: 0px 24px 0 12px;
+  margin: 2px 24px 12px;
   height: 80px;
   align-self: center;
   background-color: black;
