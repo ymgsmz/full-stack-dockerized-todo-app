@@ -15,9 +15,9 @@ class TodoController extends Controller
      */
     public function all()
     {
-        $todo = Todo::all();
+        $todo = Todo::orderBy('created_at', 'DESC')->get();
 
-        return \response($todo);
+        return response($todo);
     }
 
     /**
