@@ -1,6 +1,6 @@
 FROM php:7.3-fpm
 
-# Change currently directory
+# Change current directory
 WORKDIR /app
 
 # Install dependencies
