@@ -34,7 +34,7 @@ class TodoController extends Controller
         $todo->body = $request->get('body');
         $todo->save();
 
-        return \response([
+        return response([
             'id' => $todo->id
         ]);
     }
@@ -50,6 +50,8 @@ class TodoController extends Controller
 
         Todo::where('id', $request->get('id'))->delete();
 
-        return \response();
+        return response([
+            'deleted' => true
+        ]);
     }
 }
