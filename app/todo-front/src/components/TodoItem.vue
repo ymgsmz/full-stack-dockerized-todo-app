@@ -43,6 +43,7 @@ export default {
   align-self: center;
   width: 400px;
   text-align: justify;
+  word-break: break-all;
 }
 
 .delete > span {
