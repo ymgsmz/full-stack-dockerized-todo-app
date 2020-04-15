@@ -1,9 +1,9 @@
 FROM php:7.3-fpm
 
 # Change current directory
-WORKDIR /app
+WORKDIR /var/www/back
 
-# Install dependencies
+# Install container dependencies
 RUN apt-get update && apt-get install -y \
 	apt-utils \
 	libpq-dev \
@@ -24,7 +24,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Add user for laravel application
 RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g laraman www
+RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy php's config ini file to the php's expected path
 COPY ./build/todo-back/conf/default.php.ini /usr/local/etc/php/conf.d
@@ -36,13 +36,14 @@ COPY ./app/todo-back/ .
 RUN composer install
 
 # Copy laravel application's permissions to WORKDIR
-COPY --chown=laraman:www ./app/todo-back/ .
+COPY --chown=www:www ./app/todo-back/ .
 
 # Set current user
-USER laraman
+USER www
 
 # Expose php-fpm default port
 EXPOSE 9000
 
 # Run daemon
 ENTRYPOINT ["php-fpm"]
+
