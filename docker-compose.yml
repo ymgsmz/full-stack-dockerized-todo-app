@@ -1,6 +1,21 @@
 version: "3.7"
 
 services:
+  front:
+    build:
+      context: .
+      dockerfile: ./build/todo-front/Dockerfile
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - backend-vol:/var/www/back
+      - "./build/todo-front/conf/nginx.conf:/etc/nginx/nginx.conf"
+    depends_on:
+      - backend
+    links:
+      - backend
+
   backend:
     build:
       context: .
@@ -12,7 +27,8 @@ services:
       - DB_USERNAME=violin
       - DB_PASSWORD=passwd
     volumes:
-      - "./app/todo-back:/app"
+      - backend-vol:/var/www/back
+      - "./build/todo-back/conf/default.php.ini:/usr/local/etc/php/conf.d/php.ini"
     depends_on:
       - postgre
 
@@ -23,5 +39,6 @@ services:
       - POSTGRES_DB=db_todo
       - POSTGRES_USER=violin
       - POSTGRES_PASSWORD=passwd
-    volumes:
-      - "./data/postgres/db:/var/lib/postgresql/data"
+
+volumes:
+  backend-vol:
