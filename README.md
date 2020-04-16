@@ -8,12 +8,13 @@ It is possible to running these applications just by clone the repository and ru
 
 ## USEFUL FOR
 
- Since this project is produced and containerized via Docker-Compose can be useful for those full-stack developers who would have a start learning point to awesome Docker.
+- Since this project is produced and containerized via Docker-Compose can be useful for those full-stack developers who would have a start learning point to awesome Docker.
 - It may also use for running a full-stack application in local or staging environments.
 - Although do not recommend running containerized apps by Docker Compose in production environments but you can use this project for cases you going to run the application in one server. (DON'T FORGET SECURITY PREREQUISITES)
 
 ## PREREQUISITES
-Follow up the official docs of Docker at [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/ "Docker")
+Follow up the official docs of Docker to install `Docker Engine` and `docker-compose`:
+[https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/ "Docker")
 
 ## RUNNING STEPS
 1. You need to clone master branch where you wanna use it, via ssh:
