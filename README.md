@@ -1,7 +1,9 @@
 
 # Single-Click Dockerized Todo App with Nginx, Laravel, Vue (SPA), PostgreSql
 
-A ready to use application included Php (for backend), JavaScript (Node based frontend) and Postgresql database,
+![Docker whale with full-stack ](https://github.com/ymgsmz/full-stack-dockerized-todo-app/raw/master/cover.jpg)
+
+A ready to use application included Php (for backend), JavaScript (Node based frontend) and Postgresql database.
 It is possible to running these applications just by clone the repository and running several common commands for initializing Laravel framework.
 
 ## USEFUL FOR
