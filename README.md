@@ -3,14 +3,14 @@
 
 ![Docker whale with full-stack ](https://github.com/ymgsmz/full-stack-dockerized-todo-app/raw/master/cover.jpg)
 
-A ready to use application included Php (for backend), JavaScript (Node based frontend) and Postgresql database.
-It is possible to running these applications just by clone the repository and running several common commands for initializing Laravel framework.
+A ready to use application included Php (for backend), JavaScript (NodeJs based frontend) and PostgreSQL database.
+It is possible to running these applications just by clone this repository and executing several commands for initializing Laravel framework.
 
 ## USEFUL FOR
 
-- Since this project is produced and containerized via Docker-Compose can be useful for those full-stack developers who would have a start learning point to awesome Docker.
-- It may also use for running a full-stack application in local or staging environments.
-- Although do not recommend running containerized apps by Docker Compose in production environments but you can use this project for cases you going to run the application in one server. (DON'T FORGET SECURITY PREREQUISITES)
+- Since this project is produced and containerized via Docker-Compose, could be useful for those full-stack developers who would have a start learning point to awesome Docker.
+- It may also be used for running a full-stack application in local or staging environments.
+- Although do not recommend running apps containerized by Docker Compose in production environments but you can use this project for cases you are going to run the application in one server. (DON'T FORGET SECURITY PREREQUISITES)
 
 ## PREREQUISITES
 Follow up the official docs of Docker to install `Docker Engine` and `docker-compose`:
