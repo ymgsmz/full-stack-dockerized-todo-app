@@ -46,38 +46,38 @@ Follow up the official docs of Docker to install `Docker Engine` and `docker-com
 	```bash
 	$ docker-compose up -d
 	```
-	- you can merge step 2 and 3 by running shorter command as below:
+	- you can merge step 2 and 3 by executing shorter command as below:
 		```bash
 		$ docker-compose up -d --build
 		```
 	- `-d` flag means **d**etach and used when you want to make the terminal free right after process done to running further commands.
 
 Congrats you are running a full-stack application in simplest way.
-**Note that** to running any command belongs and across the applications you have to `ssh` to the respective container by command below:
+**Note that** to executing any command belongs and across the applications you have to `ssh` to the respective container by command below:
 ```bash
 $ docker-compose exec [your-container-name] sh
 ```
 
-#### From here onward the steps belongs to initializing application:
+#### From here onward the steps belongs to initializing applications:
 ### Laravel
 -----------------
-1. We have to generate a key for our Laravel application, this is once  unless you remove the volumes related to backend container, so we need to ssh to container `backend` by the noted formula in the above section and run this `artisan` command:
+1. We have to generate a key for our Laravel application, this is once  unless you remove the volumes related to backend container, so we need to ssh to container `backend` by the noted formula in the above section and run `artisan` command:
 	```bash
 	$ php artisan key:generate
 	```
-2. Migrations are the second step that every laravel based application needs for first initializing:
+2. Migrations are the second step that every Laravel based application needs for first initializing:
 	```bash
 	$ php artisan migrate
 	```
-	- Remember that the database data directory has not mounted to the local directory so we will lose our data after make the database container called `postgre` down.
+	- Remember that the database data directory has not mounted to the local directory so we will lose our data after make down the database container called `postgre`.
 	- To avoid any data losing, google about `docker mount postgresql data directory`.
 
 The common configurations has been finished and now you can access the app by `localhost` from local or your domain *(if adjusted)* from anywhere.
 
 ## CONTRIBUTION
-I'm happy of sharing my knowledge in the format of a free source repository we should push each other forward to motivate to share their knowledge with the open-source community.
+I'm happy for sharing my knowledge in the format of a free source repository, we should push each other forward to motivate to share our knowledge with the open-source community.
 
-Feel free to create issue instances and ask your question or help the community via your pull requests.
+Feel free to create issued and ask your questions or help the community by your pull requests.
 
 ## REFERENCES
 - [Docker Engine](https://www.docker.com/ "docker") - Cool containerizer and orchestrator
